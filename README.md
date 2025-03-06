@@ -192,3 +192,37 @@ listaMutavel.add(15)
 listaMutavel.removeFirst()
 println(listaMutavel)
 ```
+
+## Orientação a Objetos
+
+### Classes e Objetos
+* Classe simples
+``` kotlin
+class MinhaClasse
+```
+Construtor primário
+``` kotlin
+class Pessoa(val nome: String, var idade: Int)
+```
+* Construtor secundário
+``` kotlin
+class Carro {
+    var marca: String
+    var modelo: String
+
+    constructor(marca: String, modelo: String) {
+        this.marca = marca
+        this.modelo = modelo
+    }
+}
+```
+
+* Criando Objetos
+``` kotlin
+
+var pessoa1 = Pessoa("Tiago",  32) 
+val pessoa1 = Pessoa("Alexandre",  33)
+
+val carro1 = Carro("aaa", "bbb")
+val carro2 = Carro("ccc", "ddd")
+```
