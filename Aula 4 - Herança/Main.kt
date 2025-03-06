@@ -1,4 +1,5 @@
 import kotlin.random.Random
+import exercicio1.Felino
 
 fun main() {
 
@@ -21,4 +22,7 @@ fun main() {
     for (i in 0..formas.size - 1) {
         println("${formas[i].javaClass} ${formas[i].area()}")
     }
+
+    val g = exercicio1.Gato("aa", 24.0)
+    val f = Felino("bb", 35.0)
 }
