@@ -216,7 +216,22 @@ class Carro {
     }
 }
 ```
-
+* Classe abstrata
+``` kotlin
+abstract class Forma {
+    abstract fun area(): Double
+}
+``` 
+* Classe de dados
+``` kotlin
+data class Dispositivo(val nome: String, val preco: Double)
+``` 
+* Classes enum
+``` kotlin
+enum class Cor(rgb:String) {
+    Vermelho("FF0000"), Verde("00FF00"), Azul("0000FF")
+}
+``` 
 * Criando Objetos
 ``` kotlin
 
@@ -225,4 +240,126 @@ val pessoa1 = Pessoa("Alexandre",  33)
 
 val carro1 = Carro("aaa", "bbb")
 val carro2 = Carro("ccc", "ddd")
+```
+<details>
+  <summary>Java e Python</summary>
+``` java
+``` 
+``` java
+``` 
+``` java
+``` 
+``` java
+``` 
+``` java
+``` 
+``` java
+``` 
+``` java
+``` 
+``` java
+``` 
+</details>
+
+### Herança
+``` kotlin
+open class Forma {
+    open fun area(): Double {
+        return 0.0
+    }
+}
+```
+``` kotlin
+class Quadrado(val lado: Double): Forma() {
+    override fun area(): Double {
+        return lado * lado
+    }
+}
+```
+``` kotlin
+class Circulo(val raio: Double): Forma() {
+    override fun area(): Double {
+        return 2 * Math.PI * (raio * raio)
+    }
+}
+```
+``` kotlin
+open class Animal(val nome: String) {
+
+    open fun domestico(): Boolean {
+        return false
+    }
+}
+```
+``` kotlin
+class Gato(override val nome: String) : Animal(nome) {
+
+    override fun domestico(): Boolean {
+        return true
+    }
+
+    override fun toString(): String {
+        return "${this.javaClass} nome é: ${this.nome}"
+    }
+}
+```
+
+## Interfaces
+* Criando interfaces
+``` kotlin
+interface Direcao {
+    val velocidadeMaxima: Double
+    fun fazerCurva(angulos: Double)
+}
+```
+
+* Implementando
+``` kotlin
+class Automovel(override val velocidadeMaxima: Double) : Direcao {
+    override fun fazerCurva(angulos: Double) {
+        println("")
+    }
+}
+
+class Bicicleta(override val velocidadeMaxima: Double) : Direcao {
+    override fun fazerCurva(angulos: Double) {
+        println("")
+    }
+}
+```
+
+* Instanciando
+``` kotlin
+val auto = Automovel(150.0)
+val bicicleta = Bicicleta(80.0)
+
+val direcoes = arrayOf<Direcao>(auto, bicicleta)
+direcoes[0].fazerCurva(30.0)
+direcoes[1].fazerCurva(30.0)
+``` 
+
+## Exceções
+* Lançando uma exceção
+``` kotlin
+throw Exception("Divisão por zero.")
+``` 
+
+* Criando uma exceção
+``` kotlin
+class DivisaoPorZeroException : ArithmeticException("Erro de divisão por zero.")
+```
+
+* Verificando e lançando exceções
+``` kotlin
+require(tamanho > 0) { "Tamanho inválido: $tamanho" }
+check(tamanho < 0) { "Tamanho inválido: $tamanho" }
+```
+
+* Alternativa de lançamento
+``` kotlin
+fun criarLista(tamanho: Int): List<Int> {
+    if (tamanho < 0)
+        error("Tamanho inválido: $tamanho")
+    return List<Int>(tamanho) { 0 }
+}
 ```
