@@ -2,6 +2,8 @@
 
 O projeto final é um sistema com 12 classes (no mínimo), relações entre as classes são esperadas. Pode ser feito em dupla ou individual. Interação com o utilizador é obrigatório, para criar, deletar, modificar, dependendo do sistema. Interface gráfica não obrigatória, mas preferível. O documento de especificação deve ser apresentado 08/05/2025. Apresentação final na época de exames: 3 minutos, o código do projeto deve ser entregue.
 
+[Formulário de dificuldades esperadas](https://docs.google.com/forms/d/15r-fOzUljAEck1F9bRhaa7G4M8eJEHebawoIHb_XW3M/preview)
+
 Exemplos de temas:
 
 Sistema bancário  
